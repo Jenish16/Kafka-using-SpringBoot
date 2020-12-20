@@ -1,3 +1,3 @@
 # Kafka-using-SpringBoot
 
-Simple Producer COnsumer Implemenation using Kafka
+Simple Producer Consumer Implemenation using Kafka
