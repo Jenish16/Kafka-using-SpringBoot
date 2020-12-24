@@ -21,9 +21,10 @@ public class LibraryEventsConsumer {
 	@Autowired
     private LibraryEventsService libraryEventsService;
 
-    @KafkaListener(topics = {"h4dbfpf4-temp"})
+    @KafkaListener(topics = {"h4dbfpf4-temp2"})
     public void onMessage(ConsumerRecord<String,String> consumerRecord) throws JsonProcessingException {
 
+    	
         log.info("ConsumerRecord : {} ", consumerRecord );
         libraryEventsService.processLibraryEvent(consumerRecord);
 

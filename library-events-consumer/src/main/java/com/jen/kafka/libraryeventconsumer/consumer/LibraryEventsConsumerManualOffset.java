@@ -16,6 +16,9 @@ public class LibraryEventsConsumerManualOffset implements AcknowledgingMessageLi
     @KafkaListener(topics = {"h4dbfpf4-temp"})
     public void onMessage(ConsumerRecord<String, String> consumerRecord, Acknowledgment acknowledgment) {
         log.info("ConsumerRecord : {} ", consumerRecord );
+        
+        //To Manually acknowledge Offset value to Kafka cluster
+        //we need to set enable.auto.commit as false , so it'll not commit offset automatically
         acknowledgment.acknowledge();
     }
 }

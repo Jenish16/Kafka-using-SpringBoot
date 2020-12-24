@@ -49,9 +49,9 @@ public class LibraryEventsController {
 	@PutMapping("/libraryevent")
 	public ResponseEntity<?> putLibraryEvent(@RequestBody @Valid LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException{
 		log.info("Before Service Method Call");
-		if(libraryEvent.getLibraryEventId()==null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please pass the LibraryEventId");
-        }
+//		if(libraryEvent.getLibraryEventId()==null){
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please pass the LibraryEventId");
+//        }
 		
 		//This is asynchronous call
 		//libraryEventProducer.sendLibraryEvent(libraryEvent);
