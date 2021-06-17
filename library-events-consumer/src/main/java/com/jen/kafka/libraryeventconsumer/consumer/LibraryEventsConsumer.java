@@ -10,6 +10,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jen.kafka.libraryeventconsumer.service.LibraryEventsService;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @Component
 @Slf4j
@@ -28,5 +30,10 @@ public class LibraryEventsConsumer {
         log.info("ConsumerRecord : {} ", consumerRecord );
         libraryEventsService.processLibraryEvent(consumerRecord);
 
+    }
+
+    @GetMapping(path = "/dummy")
+    String dummy(){
+        return "Dummy";
     }
 }
